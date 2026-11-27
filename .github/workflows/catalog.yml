@@ -1,0 +1,26 @@
+name: Update Ninjago catalogue
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - sync_catalog.py
+      - .github/workflows/catalog.yml
+  schedule:
+    - cron: '23 4 * * 1'
+permissions:
+  contents: write
+concurrency: ninja-catalog
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python sync_catalog.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add catalog.json
+          git diff --cached --quiet || (git commit -m "Refresh Rebrickable catalogue" && git push)
