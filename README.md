@@ -1,3 +1,3 @@
-# NINJA v1.0.0
+# NINJA v1.2.0
 
-Standalone LEGO Ninjago minifigure collection tracker adapted from RELIC in NEXUS. Add figures manually, upload photos, group by season or suit, track ownership, condition, completeness and HUF prices. Local storage and JSON backup. No preloaded catalogue. Enable GitHub Pages from main / root to host. PWA support varies by browser.
+Standalone Ninjago collection tracker adapted from RELIC. Catalogue data and image links from [Rebrickable](https://rebrickable.com/downloads/). Weekly GitHub Actions refresh joins Ninjago theme sets, inventories and minifigures. Figures not listed in these inventories may be absent. No API key required. BrickLink XML remains optional. Personal ownership and prices are saved locally. Enable Pages from main / root. If needed run Update Ninjago catalogue in Actions manually. Review source terms before redistribution.
